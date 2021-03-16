@@ -7,7 +7,7 @@ import youtube_dl
 import gid
 from mutagen.id3 import ID3, TIT2, TPE1, TALB, APIC
 
-target_path = "/home/quizznor/music"
+target_path = "/home/quizznor/git-repositories/music"
 
 # Download the mp3 file
 ydl_arguments = {"--extract-audio",
