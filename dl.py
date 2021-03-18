@@ -51,7 +51,7 @@ def add_picture(song):
 
     if not os.path.isfile(img_path_should):
         response = gid.googleimagesdownload()                                   # Can we supress stdout for gid?
-        absolute_image_paths = response.download(gid_arguments)
+        absolute_image_paths = response.download(gid_arguments)                 # What about this one?
         img_path_is = [file for file in os.listdir(f"{target_path}") if file.startswith(f"{metadata[0]} {metadata[1]}")][0]
         os.system(f"mv '{target_path}/{img_path_is}' {img_path_should}")
 
