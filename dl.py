@@ -8,7 +8,7 @@ from mutagen.id3 import ID3, TIT2, TPE1, TALB, APIC
 
 target_path = "/home/quizznor/git-repositories/music"
 
-ydl_arguments = {"--extract-audio", "--add-metadata",
+ydl_arguments = {"--extract-audio", "--add-metadata", "--quiet",
                  "--audio-format mp3", f"--output '{target_path}/%(id)s.%(ext)s'"}
 
 
@@ -23,7 +23,7 @@ def download_song(link):
 def add_metadata(song):
 
     audio, metadata = ID3(song), ["","",""]
-    print("\nADDING METADATA FOR " + song)
+    print("ADDING METADATA FOR " + song)
 
     for i,tag in enumerate(["TP1","TIT2","TALB"]):
         try:
@@ -68,7 +68,7 @@ def handle_library(song):
     os.system(f"mv {audio_path} {target_path}/artists/{artist}/{track}")
     os.system(f"ln -s {target_path}/artists/{artist}/{track} {target_path}/artists/all/{track}")
 
-    print("TRACK ADDED TO LIBRARY SUCESSFULLY!\n")
+    print("TRACK ADDED TO LIBRARY SUCCESSFULLY!\n")
 
 
 if __name__=="__main__":
