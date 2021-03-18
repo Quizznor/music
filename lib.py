@@ -9,4 +9,4 @@ with open(f"{target_path}/lib","w") as library:
         for track in os.listdir(f"{target_path}/artists/{artist}"):
             library.write(f"{artist}" + "\t" + f"{track.replace('.mp3','')}" + "\n")
 
-print("\nSucessfully updated library")
+print("\nSucessfully updated library\n")
